@@ -1,340 +1,146 @@
-# Customer Segmentation & Marketing Analysis Using Python
+# Customer Segmentation and Marketing Analysis using Python
 
-## Project Overview
+Author: Mahendra Kumar Mahto
 
-This project analyzes customer data to understand spending behavior, purchasing patterns, marketing campaign responses, and customer value.
+## About this project
 
-The main goal was to identify different customer groups and understand how the business can use customer data to improve marketing decisions.
+I worked on this project to understand customer spending behavior using Python. The dataset had information about customer income, age, product spending, purchase channels and marketing campaign responses. My goal was to find useful patterns in this data and divide customers into groups so that a business can plan marketing in a better way.
 
-The analysis was performed using Python, Pandas, NumPy, Matplotlib, and Seaborn.
+I used Python, Pandas, NumPy, Matplotlib and Seaborn for this project.
 
----
+## Problem
 
-## Problem Statement
+When we look at all customers together as one big group, it becomes hard to answer simple business questions like:
 
-The company has customer information such as income, age, product spending, purchase channels, and campaign responses.
+- Which customers are spending the most money?
+- Which customers are not engaged much?
+- Which products are selling well?
+- Which purchase channel is used the most?
+- Which marketing campaign worked better than others?
 
-However, looking at all customers as one group makes it difficult to understand:
+So there was a need to break down the customer data into smaller groups and study it properly.
 
-- Which customers are the most valuable?
-- Which customers need more engagement?
-- Which products generate the most spending?
-- Which purchase channels are most important?
-- Which marketing campaigns perform better?
+## What I did
 
-The business needs a simple way to understand customer behavior and target different customer groups more effectively.
-
----
-
-## Objective
-
-The main objectives of this project were to:
-
-- Analyze customer demographics and spending behavior.
-- Understand product-wise spending.
-- Compare different purchase channels.
-- Analyze marketing campaign responses.
-- Identify high-value customers.
-- Create customer segments based on spending behavior.
-- Provide practical recommendations for better customer targeting.
-
----
-
-## Solution
-
-I analyzed **2,240 customer records** using Python and created a rule-based customer segmentation approach.
-
-Customers were divided into four groups based on their total spending:
-
-| Segment | Business Meaning |
-|---|---|
-| Low Value | Customers with relatively low spending |
-| Medium Value | Customers with moderate spending |
-| High Value | Customers with strong spending |
-| VIP | Customers with very high spending |
-
-The segmentation was created using spending percentiles rather than machine learning or clustering.
-
----
-
-## Analysis Approach
-
-The project followed these steps:
-
-### 1. Data Loading
-
-Loaded the marketing campaign dataset into Pandas and checked its structure.
-
-### 2. Data Cleaning
-
-- Checked missing values.
-- Checked duplicate records.
-- Converted income into a numeric format.
-- Converted customer dates into datetime format.
-- Checked unrealistic age values and income outliers.
-
-### 3. Feature Engineering
-
-Created useful business variables:
-
-- `Age`
-- `Children`
-- `Total_Spending`
-- `Total_Purchases`
-- `Campaigns_Accepted`
-
-### 4. Exploratory Data Analysis
-
-Analyzed:
-
-- Customer age
-- Income
-- Education
-- Marital status
-- Product spending
-- Purchase channels
-- Marketing campaign performance
-- Income vs spending
-- Age vs spending
-- Correlations
-- Top 10 high-value customers
-
-### 5. Customer Segmentation
-
-Customers were divided into:
+I worked with data of 2,240 customers. After cleaning the data, I created a simple rule based segmentation. I did not use machine learning or clustering for this, because I have not learned that yet. Instead, I divided customers into four groups based on how much they spend:
 
 - Low Value
 - Medium Value
 - High Value
 - VIP
 
-The segments were then compared based on income, spending, and purchase activity.
+This was done using spending percentiles in Pandas.
 
----
+## Steps I followed
 
-# Key Insights
+1. Loaded the dataset in Pandas and checked its structure.
+2. Cleaned the data. Checked for missing values, duplicate rows, fixed the income column, converted the customer date column to proper date format, and checked for wrong age and income values.
+3. Created new columns that were useful for analysis, like Age, Children, Total Spending, Total Purchases and Campaigns Accepted.
+4. Did exploratory analysis on age, income, education, marital status, product spending, purchase channels and campaign performance.
+5. Divided customers into four spending based segments and compared them.
 
-## 1. Customer Value
+## What I found
 
-The analysis identified four customer groups, each representing roughly **25% of the customer base**.
+### Customer value
 
-| Segment | Customers | Avg. Spending | Avg. Purchases |
-|---|---:|---:|---:|
+Each of the four groups had close to 25 percent of the total customers.
+
+| Segment | Customers | Average Spending | Average Purchases |
+|---|---|---|---|
 | Low Value | 560 | 39.26 | 4.31 |
 | Medium Value | 561 | 184.57 | 8.27 |
 | High Value | 559 | 709.82 | 17.59 |
 | VIP | 560 | 1,490.48 | 19.99 |
 
-VIP customers spend around **38 times more** than Low Value customers on average.
+VIP customers spend almost 38 times more than Low Value customers.
 
-### Business Recommendation
+What can be done: Keep VIP customers happy with loyalty offers and premium deals so they do not leave.
 
-Focus on retaining VIP customers through loyalty rewards, personalized offers, and premium products.
+### High Value customers have room to grow
 
----
+High Value customers spend 709.82 on average and make about 17.59 purchases. Their average income is 60,419, while VIP customers have an average income of 75,238.
 
-## 2. Growth Opportunity
+What can be done: Offer bundles and personal offers to these customers so some of them can move up to VIP.
 
-High Value customers spend an average of **709.82** and make around **17.59 purchases**.
+### Low Value customers need attention
 
-Their average income is also **60,419**, compared with **75,238** for VIP customers.
+Low Value customers are also about 25 percent of all customers, but they spend only 39.26 on average and make just 4.31 purchases.
 
-### Business Recommendation
+What can be done: Send them discounts and simple offers to bring them back and increase their purchases.
 
-Use cross-selling, bundles, and personalized offers to increase spending among High Value customers and move suitable customers toward the VIP segment.
+### Products that sell the most
 
----
+Wine and Meat together make up about 77.73 percent of all product spending.
 
-## 3. Re-engagement Opportunity
+What can be done: Keep promoting these two categories and use them to introduce customers to other products.
 
-Low Value customers represent around **25% of the customer base**, but their average spending is only **39.26**.
+### Purchase channels
 
-They also make only **4.31 purchases** on average.
+Store purchases are the highest, at about 46.18 percent. Web purchases are about 32.58 percent and Catalog purchases are about 21.23 percent.
 
-### Business Recommendation
+What can be done: Keep the store channel strong, and try offers that push more customers towards Web and Catalog.
 
-Use targeted discounts, bundles, and re-engagement campaigns to increase their purchase frequency.
+### Marketing campaigns
 
----
+The latest campaign got a response from 334 customers, which is about 14.91 percent. The best campaign before that got 167 responses, about 7.46 percent.
 
-## 4. Product Opportunity
+What can be done: Study what type of customers responded to the successful campaigns and use that information for future campaigns.
 
-Wine and Meat are the strongest product categories.
+## Why this matters
 
-Together, they contribute approximately **77.73% of total product spending**.
+Customer data is only useful if it helps in making better decisions. This project helps in moving away from treating all customers the same way, and instead gives a simple plan for each group:
 
-### Business Recommendation
+- VIP customers: Keep them
+- High Value customers: Help them grow
+- Medium Value customers: Sell them more products
+- Low Value customers: Bring them back
 
-Continue promoting these strong categories and use them to cross-sell lower-performing products.
+## Possible impact
 
----
+- 560 VIP customers can be given priority for retention offers.
+- 560 Low Value customers can be targeted with offers to bring them back.
+- Wine and Meat make up 77.73 percent of product spending, so they are important for cross selling.
+- 46.18 percent of purchases happen in stores, so this channel needs attention.
+- The last campaign had a response rate of 14.91 percent, which can be used as a target for future campaigns.
 
-## 5. Purchase Channel Opportunity
+These are just findings from the data. No real marketing test was done, so these are opportunities and not confirmed results.
 
-Store purchases are the strongest channel, accounting for around **46.18% of total recorded purchases**.
+## Problems I faced and how I solved them
 
-Web purchases account for around **32.58%**, while Catalog purchases account for around **21.23%**.
+**CSV file loading wrong**
+At first the file loaded as one single column. I checked the file and fixed the separator so each column loaded properly.
 
-### Business Recommendation
+**Wrong data types**
+Some columns like income and date were not in the right format. I converted them using Pandas and checked the types again.
 
-Continue strengthening the Store channel while testing targeted offers to increase Web and Catalog purchases.
+**Date column error**
+The date column gave errors because dates were written as day-month-year. I fixed this using Pandas date functions.
 
----
+**Wrong age values**
+A few customers had age values that did not make sense. I found these values and removed them only from the age related charts, not from the full dataset.
 
-## 6. Marketing Campaign Opportunity
+**High income values**
+Some customers had very high income compared to others. I checked this using a boxplot before using income in my analysis.
 
-The latest campaign received responses from **334 customers**, or approximately **14.91% of the customer base**.
+**Choosing how to group customers**
+I first thought of using clustering, but I have not learned that method yet. So I used a simple rule based method with spending percentiles instead. This was easier to explain and still gave useful groups.
 
-The strongest previous campaign received **167 responses**, or around **7.46%**.
+## Tools used
 
-### Business Recommendation
+- Python
+- Pandas
+- NumPy
+- Matplotlib
+- Seaborn
+- Jupyter Notebook
 
-Study the characteristics of customers responding to successful campaigns and use those characteristics to improve future campaign targeting.
+## Result
 
----
+This project turned raw customer data into useful information. It shows the high value customers, the low engagement customers, the best selling products, the strongest purchase channel and the difference between marketing campaigns. It also gives four clear customer groups that a business can use for better marketing decisions.
 
-# Why This Analysis Matters
+## Files in this project
 
-Customer data is useful only when it helps the business make better decisions.
-
-This project helps the business move from a **one-size-fits-all marketing approach** toward more targeted strategies.
-
-For example:
-
-- **VIP → Retain**
-- **High Value → Grow**
-- **Medium Value → Cross-sell**
-- **Low Value → Re-engage**
-
-This allows marketing efforts to be focused on the customers and products where there is a clear opportunity.
-
----
-
-# Potential Business Impact
-
-The analysis identifies several areas where the business can improve:
-
-- **560 VIP customers** can be prioritized for retention.
-- **560 Low Value customers** can be targeted with re-engagement offers.
-- **77.73% of product spending** comes from Wine and Meat, making them important categories for cross-selling.
-- **46.18% of purchases** happen through stores, highlighting the importance of this channel.
-- The latest campaign achieved a **14.91% response rate**, providing a useful benchmark for future campaigns.
-
-These are opportunities identified from the dataset. They are **not claimed as actual revenue improvements**, because no real-world marketing experiment was conducted.
-
----
-
-# Challenges Faced & How I Solved Them
-
-## 1. CSV Data Loading Issue
-
-### Problem
-
-Initially, the dataset was loaded incorrectly and appeared as one long column.
-
-### Solution
-
-I checked the structure of the source file and corrected the CSV separator so that each field was loaded into its proper column.
-
----
-
-## 2. Data Type Issues
-
-### Problem
-
-Some columns were not in the correct format for analysis.
-
-For example, income needed to be treated as a numerical variable and the customer date needed to be treated as a date.
-
-### Solution
-
-I converted the columns using Pandas and checked their data types before continuing with the analysis.
-
----
-
-## 3. Date Conversion Error
-
-### Problem
-
-The `Dt_Customer` column initially caused errors during date conversion because the dates were stored in day-month-year format.
-
-### Solution
-
-I converted the column using Pandas datetime functions and handled invalid values safely.
-
----
-
-## 4. Unrealistic Age Values
-
-### Problem
-
-Some customer records resulted in unrealistic ages.
-
-### Solution
-
-Instead of allowing these values to affect the analysis, I identified and flagged unrealistic ages and excluded them from age-based visual analysis.
-
----
-
-## 5. Income Outliers
-
-### Problem
-
-A few customers had unusually high income values that could affect averages.
-
-### Solution
-
-I used distribution analysis and a boxplot to identify potential income outliers before interpreting income-based results.
-
----
-
-## 6. Choosing a Segmentation Method
-
-### Problem
-
-I initially considered clustering, but clustering is a machine learning technique that I had not learned yet.
-
-### Solution
-
-I used a **rule-based segmentation approach with Pandas** instead.
-
-Customers were grouped using spending percentiles into Low Value, Medium Value, High Value, and VIP segments.
-
-This kept the project focused on Python and business analysis while still producing useful customer segments.
-
----
-
-# Tools & Technologies
-
-- **Python**
-- **Pandas**
-- **NumPy**
-- **Matplotlib**
-- **Seaborn**
-- **Jupyter Notebook**
-
----
-
-# Project Outcome
-
-This project helped turn raw customer data into practical business insights.
-
-The analysis identified:
-
-- High-value customers
-- Low-engagement customers
-- High-performing products
-- Strong and weak purchase channels
-- Marketing campaign differences
-- Four customer value segments
-
-The final recommendations can help the business improve **customer retention, targeted marketing, cross-selling, and customer engagement**.
-
----
-
-## Project Structure
-
-```text
+```
 Customer-Segmentation-Python/
 │
 ├── Customer_Segmentation_Marketing_Analysis.ipynb
@@ -344,6 +150,4 @@ Customer-Segmentation-Python/
     ├── product_spending.png
     ├── campaign_performance.png
     └── customer_segments.png
-
-
-
+```
