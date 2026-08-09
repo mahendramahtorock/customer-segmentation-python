@@ -149,5 +149,5 @@ Customer-Segmentation-Python/
     ├── age_distribution.png
     ├── product_spending.png
     ├── campaign_performance.png
-    └── customer_segments.png
+    └── customer_segments.png. (etc)...............................................................................
 ```
